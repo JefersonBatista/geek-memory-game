@@ -1,0 +1,28 @@
+.game {
+    width: 420px;
+    height: 420px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    color: rgb(7, 19, 126);
+    border: 6px solid rgb(64, 64, 64);
+    border-radius: 10px;
+    display: grid;
+    grid-template: repeat(7, 1fr) / repeat(6, 1fr);
+}
+
+.game > div {
+    border: 6px solid rgb(64, 64, 64);
+    border-radius: 2px;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game > div > img {
+    flex-shrink: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
