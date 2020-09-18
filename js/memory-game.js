@@ -16,15 +16,9 @@ const memory_game = {
         this.container_element = container;
     },
 
-    /* test_on_click: function(position) {
-        console.log('Click on position ' + position);
-        this.board[position] = '"resources/6.png"';
-        this.draw();
-    }, */
-
     make_play: function(position) {
-        if(this.board[position] === 'back') {
-            this.board[position] = this.cards[position];
+        if(this.board[position] === 'back.jpg') {
+            this.board[position] = this.cards[position] + '.png';
             switch(this.flipped) {
                 case 0:
                     this.move1 = position;
@@ -44,8 +38,8 @@ const memory_game = {
                     break;
                 default:
                     if(this.board[this.move1] !== this.board[this.move2]) {
-                        this.board[this.move1] = 'back';
-                        this.board[this.move2] = 'back';
+                        this.board[this.move1] = 'back.jpg';
+                        this.board[this.move2] = 'back.jpg';
                     }
                     this.move1 = position;
                     this.flipped = 1;
@@ -69,7 +63,7 @@ const memory_game = {
     },
 
     start: function() {
-        this.board.fill('back');
+        this.board.fill('back.jpg');
         this.cards.fill('');
         this.score = 0;
         this.errors = 0;
@@ -126,15 +120,16 @@ const memory_game = {
         for (i in this.board) {
             content += '<div><img src="resources/' +
                 this.board[i] +
-                '.png" onclick="memory_game.make_play(' + i + ')"></div>';
+                '" onclick="memory_game.make_play(' + i + ')"></div>';
         }
 
-        content += '<div onclick="memory_game.start()">' + this.new_game + '</div>';
-        content += '<div>' + this.info + '</div>';
-        content += '<div>' + this.msg + '</div>';
-        content += '<div>' + this.best_msg() + '</div>';
-        content += '<div>Erros: ' + this.errors + '</div>';
-        content += '<div>Pares: ' + this.score + '/18</div>';
+        // Panel
+        content += '<div class="panel" onclick="memory_game.start()">' + this.new_game + '</div>';
+        content += '<div class="panel">' + this.info + '</div>';
+        content += '<div class="panel">' + this.msg + '</div>';
+        content += '<div class="panel">' + this.best_msg() + '</div>';
+        content += '<div class="panel">Erros: ' + this.errors + '</div>';
+        content += '<div class="panel">Pares: ' + this.score + '/18</div>';
         
         this.container_element.innerHTML = content;
     }

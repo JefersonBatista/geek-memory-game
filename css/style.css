@@ -1,9 +1,8 @@
 .game {
     width: 420px;
-    height: 420px;
+    height: 490px;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    color: rgb(7, 19, 126);
+    background-color: rgb(64, 64, 64);
     border: 6px solid rgb(64, 64, 64);
     border-radius: 10px;
     display: grid;
@@ -12,17 +11,23 @@
 
 .game > div {
     border: 6px solid rgb(64, 64, 64);
-    border-radius: 2px;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 .game > div > img {
     flex-shrink: 0;
     max-width: 100%;
     max-height: 100%;
+}
+
+.game > .panel {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 0.88em;
+    text-align: center;
+    color: rgb(7, 19, 126);   
+    border-radius: 50%;
 }
